@@ -10,7 +10,7 @@ This playbook is designed to install the Kubernetes CLI `kubectl` on an [IBM Clo
 ​
 To run this playbook, you must have a Virtual Private Cloud (VPC) and a Virtual Servers for VPC instance (VSI) where you want to install the Kubernetes CLI (`kubectl`). When you run this playbook, Schematics securely connects to the target VSI by using the SSH key that you configured when you created the VSI. To ensure that access to your target VSI is secured always, this playbook requires a bastion host to be configured within your VPC in addition to the target VSI. You can automate the setup of your VPC, your target VSI, and the bastion host by using a [Schematics Terraform template](https://github.com/Cloud-Schematics/multitier-bastion-vpc-lamp).
 
-The playbook in this repository installs `kubectl` on virtual machine from Ansible Galaxy role **andrewrothstein.kubectl**. Also was tested on IBM Cloud VPC Generation 2 VSIs that run CentOS 7.x. You can use this playbook on virtual servers that run either CentOS or RHEL. The playbook might not work with other Linux distributions.
+The playbook in this repository installs `kubectl` on virtual machine from Ansible Galaxy role **andrewrothstein.kubectl**. Also tested on IBM Cloud VPC Generation 2 VSIs that run CentOS 7.x. You can use this playbook on virtual servers that run either CentOS or RHEL. The playbook might not work with other Linux distributions.
 
 ## Prerequisites
 ​
@@ -30,9 +30,9 @@ You must retrieve the following values to run the playbook in IBM Cloud Schemati
 |`VSI_IP`|Required|String|IBM Cloud VSI IP address.|
 |`SSH_KEY`|Required|String|IBM Cloud SSH Private key used for VSI installation.|
 ​
-## Running the playbook in Schematics by using the UI
-​
-​1. Open the [Schematics action configuration page](https://cloud.ibm.com/schematics/actions/create?name=ansible-kubectl&url=https://github.com/Cloud-Schematics/ansible-kubectl).
+## Running the playbook in Schematics by using the console
+
+1. Open the [Schematics action configuration page](https://cloud.ibm.com/schematics/actions/create?name=ansible-kubectl&url=https://github.com/Cloud-Schematics/ansible-kubectl).
 2. Review the name for your action, and the resource group and region where you want to create the action. Then, click **Create**.
 3. Select the playbook that you want to use.
 4. Select the **Verbosity** level to control the depth of information are shown when you run the playbook in Schematics.
